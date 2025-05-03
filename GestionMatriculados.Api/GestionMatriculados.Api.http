@@ -1,0 +1,6 @@
+@GestionMatriculados.Api_HostAddress = http://localhost:5101
+
+GET {{GestionMatriculados.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
