@@ -22,7 +22,7 @@ namespace GestionMatriculas.Api.Controllers
             _mapper = mapper;
         }
 
-        // POST: api/Enrollments
+        
         [HttpPost]
         public async Task<IActionResult> CreateEnrollment([FromBody] EnrollmentDto enrollmentDto)
         {
@@ -40,12 +40,12 @@ namespace GestionMatriculas.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Aquí puedes loguear el error si tienes un sistema de logs
+              
                 return StatusCode(500, $"Error inesperado al crear la matrícula: {ex.Message}");
             }
         }
 
-        // GET: api/Enrollments
+       
         [HttpGet]
         public async Task<ActionResult<IEnumerable<EnrollmentResultDto>>> GetEnrollments(
             [FromQuery] int? id,
@@ -64,12 +64,12 @@ namespace GestionMatriculas.Api.Controllers
             }
             catch (Exception ex)
             {
-                // Loguear el error aquí
+                
                 return StatusCode(500, "Error al obtener las matrículas.");
             }
         }
 
-        // GET: api/Enrollments/{id}
+        
         [HttpGet("{id}")]
         public async Task<ActionResult<EnrollmentResultDto>> GetEnrollmentById(int id)
         {
@@ -99,7 +99,7 @@ namespace GestionMatriculas.Api.Controllers
                 if (!success)
                     return NotFound("Matrícula no encontrada.");
 
-                return NoContent(); // Código 204 para indicar éxito sin contenido
+                return NoContent(); 
             }
             catch (InvalidOperationException ex)
             {
@@ -117,7 +117,7 @@ namespace GestionMatriculas.Api.Controllers
                 if (!success)
                     return NotFound("Matrícula no encontrada.");
 
-                return NoContent(); // Código 204 para indicar éxito sin contenido
+                return NoContent(); 
             }
             catch (InvalidOperationException ex)
             {

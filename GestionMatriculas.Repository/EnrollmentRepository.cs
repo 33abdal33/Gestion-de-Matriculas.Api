@@ -67,7 +67,7 @@ namespace GestionMatriculas.Repository
                 if (studentId.HasValue)
                     command.Parameters.Add(new SqlParameter("@StudentId", studentId.Value));
                 else
-                    command.Parameters.Add(new SqlParameter("@StudentId", DBNull.Value)); // Manejar valores nulos
+                    command.Parameters.Add(new SqlParameter("@StudentId", DBNull.Value));
 
                 if (courseId.HasValue)
                     command.Parameters.Add(new SqlParameter("@CourseId", courseId.Value));
@@ -86,7 +86,7 @@ namespace GestionMatriculas.Repository
                 {
                     enrollments.Add(new EnrollmentResultDto
                     {
-                        Id = reader.GetInt32(reader.GetOrdinal("Id")), // Ajusta los nombres de las columnas según tu SP
+                        Id = reader.GetInt32(reader.GetOrdinal("Id")), 
                         StudentId = reader.GetInt32(reader.GetOrdinal("StudentId")),
                         StudentName = reader.GetString(reader.GetOrdinal("StudentName")),
                         CourseId = reader.GetInt32(reader.GetOrdinal("CourseId")),

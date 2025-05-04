@@ -9,13 +9,12 @@ namespace GestionMatriculas.Services.Mapping_Profile
     {
         public EnrollmentProfile()
         {
-            // Mappings para Enrollment
+    
             CreateMap<EnrollmentDto, Enrollment>();
             CreateMap<Enrollment, EnrollmentResultDto>()
                 .ForMember(dest => dest.StudentName, opt => opt.MapFrom(src => src.Student.Name))
                 .ForMember(dest => dest.CourseTitle, opt => opt.MapFrom(src => src.Course.Title));
 
-            // Mappings para Student
             CreateMap<CreateStudentDto, Student>();
             CreateMap<Student, StudentResultDto>();
 

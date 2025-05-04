@@ -51,9 +51,9 @@ namespace GestionMatriculas.Services.Implementation
             var enrollment = _mapper.Map<Enrollment>(enrollmentDto);
             var success = await _repository.CreateEnrollmentStoredProcAsync(enrollment);
             if (!success)
-                return null; // O lanza una excepción específica
+                return null; 
 
-            // Después de crear con SP, podrías necesitar obtener el resultado para el DTO
+            
             var createdEnrollment = await _context.Enrollments
                 .Include(e => e.Student)
                 .Include(e => e.Course)
@@ -93,7 +93,7 @@ namespace GestionMatriculas.Services.Implementation
 
         public async Task<IEnumerable<EnrollmentResultDto>> GetFilteredEnrollmentsAsync(int? id, int? studentId, int? courseId, string? status)
         {
-            // Por ahora, el repositorio ya maneja el filtrado con SP
+            
             return await _repository.GetFilteredEnrollmentsAsync(studentId, courseId, status);
         }
 
