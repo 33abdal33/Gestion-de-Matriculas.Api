@@ -1,6 +1,6 @@
 # GestionMatriculados.Api
 
-> API RESTful para la gestión de usuarios, roles, cursos y matrículas.
+> API RESTful para la gestión de usuarios, cursos y matrículas.
 
 ## 🧰 Tecnologías Utilizadas
 
